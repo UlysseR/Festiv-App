@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\UserController;
 
 /*
@@ -22,6 +23,9 @@ Route::get('/home', [UserController::class, 'home'])->name('user.home');
 Route::get('/user', [UserController::class, 'index'])->name('user.index');
 Route::get('/user/edit', [UserController::class, 'edit'])->name('user.edit');
 Route::post('/user', [UserController::class, 'update'])->name('user.update');
+
+Route::get('/post', [PostController::class, 'create'])->name('post.create');
+Route::post('/post', [PostController::class, 'store'])->name('post.store');
 
 
 
