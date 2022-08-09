@@ -22,6 +22,8 @@
                 @csrf
                 <button type="submit" class="btn btn-primary">Me déconecter</button>
             </form>
+
+            
     
 @endsection
 
