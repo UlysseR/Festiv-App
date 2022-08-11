@@ -19,16 +19,21 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/home', [UserController::class, 'home'])->name('user.home');
-Route::get('/user', [UserController::class, 'index'])->name('user.index');
-Route::get('/user/edit', [UserController::class, 'edit'])->name('user.edit');
-Route::post('/user', [UserController::class, 'update'])->name('user.update');
+Route::get('/home', [UserController::class, 'home'])->name('user.home')->middleware('auth');
+Route::get('/user', [UserController::class, 'index'])->name('user.index')->middleware('auth');
+Route::get('/user/edit', [UserController::class, 'edit'])->name('user.edit')->middleware('auth');
+Route::post('/user', [UserController::class, 'update'])->name('user.update')->middleware('auth');
 
-Route::get('/post', [PostController::class, 'create'])->name('post.create');
-Route::post('/post', [PostController::class, 'store'])->name('post.store');
+Route::get('/post', [PostController::class, 'create'])->name('post.create')->middleware('auth');
+Route::post('/post', [PostController::class, 'store'])->name('post.store')->middleware('auth');
 
-Route::get('/gallery', [PostController::class, 'index'])->name('post.index');
+Route::get('/news', [PostController::class, 'index'])->name('post.index')->middleware('auth');
 
 
 
+
+Route::get('generate', function (){
+    \Illuminate\Support\Facades\Artisan::call('storage:link');
+    echo 'ok';
+});
 

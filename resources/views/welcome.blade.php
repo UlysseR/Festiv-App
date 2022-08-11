@@ -3,26 +3,30 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <title>Laravel</title>
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+        <script src="https://cdn.tailwindcss.com"></script>
+        <title>Festiv'app</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
     </head>
     <body>
-        <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
+
+        <div class='flex items-center justify-center min-h-screen'>
+        <div class="border w-fit rounded-xl m-5 shadow-sm">
             @if (Route::has('login'))
                 <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
                     @auth
-                        <a href="{{ url('/home') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Home</a>
+                        <a href="{{ url('/home') }}" class="px-4 py-2 rounded-l-xl text-white m-0 bg-red-500 hover:bg-red-600 transition">Home</a>
                     @else
-                        <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>
+                        <a href="{{ route('login') }}" class="px-4 py-2 rounded-l-xl text-white m-0 bg-red-500 hover:bg-red-600 transition">Log in</a>
 
                         @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
+                            <a href="{{ route('register') }}" class="px-4 py-2 rounded-r-xl bg-neutral-50 hover:bg-neutral-100 transition">Register</a>
                         @endif
                     @endauth
                 </div>
+            </div>
             @endif
     </body>
     </html>

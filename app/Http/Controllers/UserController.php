@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Post;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -9,7 +10,9 @@ class UserController extends Controller
 
     public function home()
     {
-        return view('home');
+        $posts = Post::all();
+        return view('home', compact('posts'));
+
     }
     public function index()
     {
@@ -27,7 +30,7 @@ class UserController extends Controller
             'name' => 'required',
             'email' => 'required|email',
         ]);
-
+        
         $user = auth()->user();
         $user->name = $request->name;
         $user->email = $request->email;

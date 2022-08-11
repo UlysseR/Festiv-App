@@ -32,15 +32,18 @@ class PostController extends Controller
         $post = new Post();
         $post->path = $path;
         $post->user_id = auth()->user()->id;
+        $post->festival = $request->festival;
 
         $post->save();
 
         $posts = Post::all();
+
         return view('post.index', compact('posts'));
     }
 
     public function index()
     {
+
         $posts = Post::all();
         return view('post.index', compact('posts'));
     }
