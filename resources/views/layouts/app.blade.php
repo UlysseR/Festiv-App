@@ -5,11 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" type="image/png" sizes="16x16" href="img/logo.png">
 
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/flowbite@1.4.4/dist/flowbite.min.css" />
 
-    <title>Festiv'app</title>
+    <title>Festive'network</title>
 </head>
 <body>
     
@@ -21,7 +22,7 @@ x-data="{open:false,menu:false, lokasi:false}">
     <div class="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8">
       <div class="relative flex items-center justify-between h-16">
         <div class="flex items-center px-2 lg:px-0">
-          <a class="flex-shrink-0" href="#">
+          <a class="flex-shrink-0" href="{{ route('post.index') }}">
             <img class="block lg:hidden h-12 w-16" src="img/logo.png" alt="Logo">
             <img class="hidden lg:block h-12 w-auto" src="img/logo.png" alt="Logo">
           </a>

@@ -4,8 +4,9 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+        <link rel="icon" type="image/png" sizes="16x16" href="img/logo.png">
         <script src="https://cdn.tailwindcss.com"></script>
-        <title>Festiv'app</title>
+        <title>Festive'network</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
