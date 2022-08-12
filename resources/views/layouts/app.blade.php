@@ -10,7 +10,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/flowbite@1.4.4/dist/flowbite.min.css" />
 
-    <title>Festive'network</title>
+    <title>Festiv’App</title>
 </head>
 <body>
     
